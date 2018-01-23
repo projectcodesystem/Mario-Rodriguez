@@ -1,0 +1,50 @@
+float r = random(255);
+float g = random(255);
+float b = random(255);
+float a = random(255);
+float diam = random(20);
+int circleX = 100;
+int circleY = 100;
+
+
+
+void setup ()
+{
+  background (654);
+  size (1000, 1000);
+  frameRate(30);
+frameRate(10);
+textSize(30);
+text("Clicking  a key wil change the background color", 10, 30); 
+fill(25, 102, 153);
+text("clicking the mouse will change the background color", 10, 60);
+fill(102, 153, 51);
+text("drawing while the mouse is pushed on will draw with only white", 10, 90); 
+}
+
+void draw()
+{
+  ellipse(mouseX, mouseY, 100, 100); 
+  circleX = circleX + 1;
+
+  strokeWeight(5);
+  fill(random(255),random(255), random(255));
+  line(pmouseX, pmouseY, mouseX, mouseY);
+ line(mouseX, mouseY, 200, 200);
+ if (mousePressed)
+ fill(255);
+ 
+}
+void mousePressed()
+{
+
+background(random(255),random(255), random(255));
+println(mouseX, mouseY, 100, 100);
+
+}
+
+void keyPressed()
+{
+  background(random(255),random(255), random(255));
+}
+
